@@ -1,0 +1,6 @@
+*.yml
+*.env
+.env
+*.gitignore
+/data
+/devdata

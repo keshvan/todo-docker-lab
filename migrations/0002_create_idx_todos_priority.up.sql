@@ -1,0 +1,1 @@
+CREATE INDEX IF NOT EXISTS idx_todos_priority ON todos(priority)
