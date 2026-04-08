@@ -2,8 +2,9 @@ package main
 
 import (
 	"log"
-	"todo-api/internal/app"
-	"todo-api/internal/config"
+
+	"github.com/keshvan/todo-docker-lab/internal/app"
+	"github.com/keshvan/todo-docker-lab/internal/config"
 )
 
 func main() {

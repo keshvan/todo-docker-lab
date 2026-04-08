@@ -7,14 +7,15 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-	"todo-api/internal/config"
-	"todo-api/internal/server"
-	"todo-api/internal/todo"
+
+	"github.com/keshvan/todo-docker-lab/internal/config"
+	"github.com/keshvan/todo-docker-lab/internal/server"
+	"github.com/keshvan/todo-docker-lab/internal/todo"
 )
 
 type App struct {
 	Server *server.Server
-	DB     *todo.DB
+	DB     *todo.Database
 }
 
 func NewApp(cfg *config.Config) (*App, error) {
