@@ -5,7 +5,8 @@ import (
 	"database/sql"
 	"fmt"
 	"time"
-	"todo-api/internal/config"
+
+	"github.com/keshvan/todo-docker-lab/internal/config"
 
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
@@ -14,11 +15,11 @@ import (
 	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
-type DB struct {
+type Database struct {
 	Pool *pgxpool.Pool
 }
 
-func New(cfg *config.Config) (*DB, error) {
+func New(cfg *config.Config) (*Database, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
@@ -38,10 +39,10 @@ func New(cfg *config.Config) (*DB, error) {
 		return nil, fmt.Errorf("unable to ping database: %w", err)
 	}
 
-	return &DB{pool}, nil
+	return &Database{pool}, nil
 }
 
-func (db *DB) Close() {
+func (db *Database) Close() {
 	if db.Pool != nil {
 		db.Pool.Close()
 	}

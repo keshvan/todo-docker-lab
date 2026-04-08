@@ -6,7 +6,8 @@ import (
 	"errors"
 	"net/http"
 	"strconv"
-	"todo-api/internal/todo"
+
+	"github.com/keshvan/todo-docker-lab/internal/todo"
 
 	"github.com/go-chi/chi/v5"
 )

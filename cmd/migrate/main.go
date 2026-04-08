@@ -3,8 +3,9 @@ package main
 import (
 	"errors"
 	"log"
-	"todo-api/internal/config"
-	"todo-api/internal/todo"
+
+	"github.com/keshvan/todo-docker-lab/internal/config"
+	"github.com/keshvan/todo-docker-lab/internal/todo"
 
 	"github.com/golang-migrate/migrate/v4"
 )
