@@ -50,7 +50,9 @@ jobs:
           
       - name: Run tests with coverage
         run: |
-          go test ./... -coverprofile=coverage.out -covermode=atomic
+          PACKAGES=$(go list ./... | grep -v '/mocks$')
+          COVERPKG=$(echo "$PACKAGES" | paste -sd, -)
+          go test $PACKAGES -coverprofile=coverage.out -covermode=atomic -coverpkg="$COVERPKG"
           go tool cover -func=coverage.out | tee coverage.txt
 
       - name: Check coverage >= 50%
