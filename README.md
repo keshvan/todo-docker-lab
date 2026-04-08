@@ -14,3 +14,9 @@ docker-compose up -d
 ```
 3. API доступно по:
 ### http://localhost:8080/api/v1/todos
+
+### Локально
+go run main.go
+
+### Тесты
+go test ./... -cover
