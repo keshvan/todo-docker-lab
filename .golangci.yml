@@ -8,6 +8,7 @@ linters:
     - govet
     - staticcheck
     - unused
+    - errcheck
 
 issues:
   max-issues-per-linter: 0

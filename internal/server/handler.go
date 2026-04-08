@@ -42,7 +42,7 @@ func (h *TodoHandler) Create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(todo)
+	_ = json.NewEncoder(w).Encode(todo)
 }
 
 func (h *TodoHandler) GetByID(w http.ResponseWriter, r *http.Request) {
@@ -61,7 +61,7 @@ func (h *TodoHandler) GetByID(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(todo)
+	_ = json.NewEncoder(w).Encode(todo)
 }
 
 func (h *TodoHandler) GetAll(w http.ResponseWriter, r *http.Request) {
@@ -80,7 +80,7 @@ func (h *TodoHandler) GetAll(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(todos)
+	_ = json.NewEncoder(w).Encode(todos)
 }
 
 func (h *TodoHandler) Update(w http.ResponseWriter, r *http.Request) {
@@ -105,7 +105,7 @@ func (h *TodoHandler) Update(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(todo)
+	_ = json.NewEncoder(w).Encode(todo)
 }
 
 func handleError(w http.ResponseWriter, err error) {
@@ -128,7 +128,7 @@ func handleError(w http.ResponseWriter, err error) {
 	}
 
 	w.WriteHeader(code)
-	json.NewEncoder(w).Encode(map[string]string{
+	_ = json.NewEncoder(w).Encode(map[string]string{
 		"error": msg,
 	})
 }
